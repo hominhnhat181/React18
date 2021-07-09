@@ -2,8 +2,9 @@ import "./app.css";
 import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Userlist from "./pages/userList/UserList";
+import User from './pages/user/User';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           </Router>
           <Router exact path="/users">
            <Userlist/>
+          </Router>
+          <Router exact path="/user/:userId">
+           <User/>
           </Router>
         </Switch>
       </div>

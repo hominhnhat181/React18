@@ -1,5 +1,6 @@
 .sidebar{
     flex: 1;
+    max-width: 240px;
     height: calc(100vh - 60px);
     background-color: #141423;
     position: sticky !important;
@@ -30,6 +31,9 @@
 }
 .sidebarListItem.active, .sidebarListItem:hover{
     background-color: rgba(100, 100, 100, 0.171);
+    /* color: #fff; */
+}
+.sidebarListItem.active, .sidebarListItem a:hover{
     color: #fff;
 }
 .sidebarIcon{
@@ -37,4 +41,10 @@
     margin-right: 5px;
 
     font-size: 20px !important;
+}
+
+
+.sidebarListItem .link{
+    all:unset !important;
+    color: #a2a3b7;
 }

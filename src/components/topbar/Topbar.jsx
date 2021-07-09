@@ -1,12 +1,15 @@
 import "./topbar.css"
 import {Notifications,Language,Settings } from '@material-ui/icons';
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
     return (
         <div className="topbar">
             <div className="topbarWrapper">
                 <div className="topLeft">
+                <Link  to="/">
                     <span className="logo" >BlueNight</span>
+                    </Link>
                 </div>
                 <div className="topRight">
                     <div className="topbarIconsContainer">

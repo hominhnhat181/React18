@@ -8,13 +8,9 @@ import { DataGrid } from "@material-ui/data-grid";
 export default function Userlist() {
   const [data, setData] = useState(userRows);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+  const handleDelete = (userId) => {
+    setData(data.filter((item) => item.id !== userId));
   };
-  // handleDelete = (counterId) => {
-  //   const counters = this.state.counters.filter((c) => c.id !== counterId);
-  //   this.setState({ counters });
-  // };
 
   const userColumns = [
     { field: "id", headerName: "ID", width: 140 },
@@ -38,17 +34,19 @@ export default function Userlist() {
       field: "action",
       headerName: "Action",
       width: 150,
+      // params born
       renderCell: (params) => {
+        const userId = params.row.id;
         return (
           <>
-            <Link to={"/users/" + params.row.id}>
+            <Link to={"/user/" + userId}>
               <button className="btn btn-secondary btn-sm m-2 userListEdit">
                 Edit
               </button>
             </Link>
             <button
               className="btn btn-danger btn-sm  userListDelete"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(userId)}
             >
               Delete
             </button>
@@ -57,16 +55,16 @@ export default function Userlist() {
       },
     },
   ];
-
   return (
     <div className="userlist">
       <DataGrid
-        rows={userRows}
+        rows={data}
         disableSelectionOnClick
         columns={userColumns}
         pageSize={10}
         checkboxSelection
       />
     </div>
+
   );
 }

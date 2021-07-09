@@ -1,5 +1,6 @@
 import "./sidebar.css"
 import {LineStyle, Timeline, TrendingUp,AccountCircle, Storefront, AttachMoney,Equalizer,Mail,DynamicFeed,ChatBubble,Work,Report} from '@material-ui/icons';
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
     return (
@@ -26,8 +27,11 @@ export default function Sidebar() {
                     <h3 className="sidebarTitle">Quick Menu</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
-                            <AccountCircle className="sidebarIcon"/>
+                       
+                            <AccountCircle className="sidebarIcon"/> 
+                            <Link className="link" to="/users/">
                             Users
+                            </Link>
                         </li>
                         <li className="sidebarListItem">
                             <Storefront className="sidebarIcon"/>

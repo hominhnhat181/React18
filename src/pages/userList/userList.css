@@ -15,3 +15,6 @@
 .userListEdit{
     width: 50px;
 }
+.MuiDataGrid-cell--textLeft {
+    outline: unset !important;
+}
